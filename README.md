@@ -1,6 +1,6 @@
-# terraform-course
+# terraform
 
-* These files are part of my Udemy course about Terraform
+* These files are part of my refers about Terraform
 
 # Compatibility
 
