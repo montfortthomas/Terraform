@@ -7,9 +7,8 @@
 * This is the >=terraform-0.12 branch. For compatibility with older versions
 
 # Demo overview
-Demo Directory | Description
+Directory | Description
 ------------ | -------------
-first-steps | First steps
 1 | First steps: Launching an EC2 instance
 2 | Using provisioner
 2.1 | Using provisioner on a Windows instance
