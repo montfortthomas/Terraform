@@ -8,7 +8,7 @@ Create service Principel (Azure)
     2. Linux virtual machine
     3. Windows virtual machine
 
-[environment variables](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html)
+[Environment variables](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html)
 
 
 Cloud Shell
