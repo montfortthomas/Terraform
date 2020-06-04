@@ -1,4 +1,4 @@
-# terraform
+# Terraform
 
     version >= 0.12.*
 
@@ -7,6 +7,9 @@ Create service Principel (Azure)
     1. Cloud shell
     2. Linux virtual machine
     3. Windows virtual machine
+
+[environment variables](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html)
+
 
 Cloud Shell
 
@@ -63,7 +66,6 @@ Raw input specified
     }
 
 
-[environment](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html)
 
 # overview
 Directory | Description
