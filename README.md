@@ -44,11 +44,14 @@ module | Using ECS + ALB in 4 modules to show how developing terraform modules w
     2. Linux virtual machine
     3. Windows virtual machine
 
-# Cloud Shell
+Cloud Shell
 
-    Here by-default Cloud shell  have terraform and azure authentication. this is by default access token atteched via your user login 
+    Here by-default Cloud shell  have terraform and azure authentication.
+    This is by default access token atteched via your user login 
 
-# az account show
+azure account show
+
+    az account show
 
         {
           ........
@@ -56,7 +59,9 @@ module | Using ECS + ALB in 4 modules to show how developing terraform modules w
           ........
         }
 
-# az ad sp create-sp-rbac --name jino
+create service principel
+
+    az ad sp create-sp-rbac --name jino
 
       {
         ........
