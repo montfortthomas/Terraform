@@ -5,7 +5,7 @@ resource "azurerm_monitor_action_group" "main" {
 
   email_receiver {
     name                    = "Alerts group"
-    email_address           = "jj00674352@techmahindra.com"
+    email_address           = "52@techmahindra.com"
     use_common_alert_schema = true
   }
 }
