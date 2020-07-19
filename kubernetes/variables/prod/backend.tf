@@ -1,0 +1,5 @@
+storage_account_name = "tfbackendstorageone"
+container_name       = "tfbackendcontainerone"
+access_key           = "+O7Ceet1tS9KTTQ8CK7kM7ZSK0hFeZQ1flSOUdxvT/mYYcZ1GBw=="
+key                  = "att/prod-terraform.tfstate"
+resource_group_name  = "tfdependcies"
