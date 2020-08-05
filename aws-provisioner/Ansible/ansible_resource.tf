@@ -39,3 +39,8 @@ resource "null_resource" "provisions" {
  variable "region" {
   default = "us-east-1"
 }
+
+
+# export AWS_ACCESS_KEY_ID="XDQ"
+# export AWS_SECRET_ACCESS_KEY="370NCsM"
+# export AWS_DEFAULT_REGION="us-east-1"
