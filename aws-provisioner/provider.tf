@@ -37,7 +37,7 @@ output "public_ip" {
 }
 
 
-export AWS_ACCESS_KEY_ID="UXBBXDQ"
-export AWS_SECRET_ACCESS_KEY="31eg2sYJk70NCsM"
-export AWS_DEFAULT_REGION="us-east-1"
+# export AWS_ACCESS_KEY_ID="UXBBXDQ"
+# export AWS_SECRET_ACCESS_KEY="31eg2sYJk70NCsM"
+# export AWS_DEFAULT_REGION="us-east-1"
 
