@@ -24,33 +24,35 @@
   ........
 
 }
-# Linux environment
 
-$ export ARM_CLIENT_ID="xxxxx"
-$ export ARM_CLIENT_SECRET="xxxxx"
-$ export ARM_SUBSCRIPTION_ID="xxxxx"
-$ export ARM_TENANT_ID="xxxxx"
+    Linux environment
+
+      $ export ARM_CLIENT_ID="xxxxx"
+      $ export ARM_CLIENT_SECRET="xxxxx"
+      $ export ARM_SUBSCRIPTION_ID="xxxxx"
+      $ export ARM_TENANT_ID="xxxxx"
 
 
-# windows environment
+    windows environment
 
-$ set ARM_CLIENT_ID="xxxxx"
-$ set ARM_CLIENT_SECRET="xxxxx"
-$ set ARM_SUBSCRIPTION_ID="xxxxx"
-$ set ARM_TENANT_ID="xxxxx"
+    $ set ARM_CLIENT_ID="xxxxx"
+    $ set ARM_CLIENT_SECRET="xxxxx"
+    $ set ARM_SUBSCRIPTION_ID="xxxxx"
+    $ set ARM_TENANT_ID="xxxxx"
 
-# Raw input specified
 
-provider "azurerm" {
+    Raw input specified
 
-  version = "=2.4.0"
-  subscription_id = "xxxxx"
-  client_id       = "xxxxx"
-  client_secret   = "xxxxx"
-  tenant_id       = "xxxxx"
-  features {}
+    provider "azurerm" {
 
-}
+      version = "=2.4.0"
+      subscription_id = "xxxxx"
+      client_id       = "xxxxx"
+      client_secret   = "xxxxx"
+      tenant_id       = "xxxxx"
+      features {}
+
+    }
 
 
 # https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html
