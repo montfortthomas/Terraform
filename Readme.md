@@ -1,29 +1,29 @@
-# Create service Principel
+    Create service Principel
 
-  1. Cloud shell
-  2. Linux virtual machine
-  3. Windows virtual machine
+      1. Cloud shell
+      2. Linux virtual machine
+      3. Windows virtual machine
 
-# Cloud Shell
+    Cloud Shell
 
- Here by-default Cloud shell  have terraform and azure authentication. this is by default access token atteched via your user login 
+     Here by-default Cloud shell  have terraform and azure authentication. this is by default access token atteched via your user login 
 
-# az account show
+    az account show
 
-{
-  ........
+      {
+        ........
 
-  ........
-}
+        ........
+      }
 
-# az ad sp create-sp-rbac --name jino
+      # az ad sp create-sp-rbac --name jino
 
-{
-  ........
+      {
+        ........
 
-  ........
+        ........
 
-}
+      }
 
     Linux environment
 
@@ -55,4 +55,4 @@
     }
 
 
-# https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html
+    https://www3.ntu.edu.sg/home/ehchua/programming/howto/Environment_Variables.html
