@@ -1,0 +1,175 @@
+---
+- name: APACHE TOMCAT and MySQL DEPLOYMENT
+  hosts: all
+  # remote_user: ubuntu
+  tasks:
+
+    - name: INSTALLTION PACKAGES
+      apt: 
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - apache2
+        - default-jdk
+      when: ansible_hostname == "app-server"
+
+    - name: Create Tomcat user
+      user:
+        name: tomcat
+        comment: AppServerUser
+        state: present
+        shell: /bin/nologin
+      when: ansible_hostname == "app-server"
+
+    - name: start the apache2-server
+      systemd:
+        name: apache2
+        state: started
+        enabled: yes
+      when: ansible_hostname == "app-server"
+
+    - name: INSTALL MySQL-SERVER
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - mysql-server
+        - python-mysqldb
+      when: ansible_hostname == "db-server"
+
+    - name: Update the MySQL Configuration
+      template:
+        src: templates/mysqld.cnf.j2
+        dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+      when: ansible_hostname == "db-server"
+      notify: Restart mysql
+
+    - name: start the MySQL-server
+      systemd:
+        name: mysql
+        state: started
+        enabled: yes
+      when: ansible_hostname == "db-server"
+
+    - name: start the MySQL-server
+      systemd:
+        name: mysql
+        state: restarted
+      when: ansible_hostname == "db-server"
+
+
+    - name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
+      mysql_user:
+        name: petclinic
+        password: petclinic
+        host: "%"
+        priv: '*.*:ALL,GRANT'
+        state: present
+      when: ansible_hostname == "db-server"
+
+    - name: Create a new database with name 'bobdata'
+      mysql_db:
+        name: petclinic
+        state: present
+      when: ansible_hostname == "db-server"
+
+    - name: CREATE THE TOMCAT DIRECTORY
+      file:
+        path: /opt/tomcat
+        state: directory
+        owner: tomcat 
+      when: ansible_hostname == "app-server"
+
+    - name: CREATE THE BUILD DIRECTORY
+      file:
+        path: /home/ubuntu/build
+        owner: ubuntu
+        state: directory
+      when: ansible_hostname == "app-server"
+
+    - name: Extract tomcat.tar.gz into /opt/tomcat
+      unarchive:
+        src: https://downloads.apache.org/tomcat/tomcat-9/v9.0.37/bin/apache-tomcat-9.0.37.tar.gz
+        dest: /opt/tomcat
+        remote_src: yes
+        owner: tomcat
+      when: ansible_hostname == "app-server"
+
+    - name: SET ALL BINARY FILE EXECUTE PERMISSION
+      shell: chmod +x /opt/tomcat/apache-tomcat-9.0.37/bin/*.sh
+      when: ansible_hostname == "app-server"
+
+    - name: Update the tomcat Configuration
+      template:
+        src: templates/tomcat.service.j2
+        dest: /etc/systemd/system/tomcat.service
+      when: ansible_hostname == "app-server"
+      notify: Restart tomcat
+
+    - name: Update the tomcat Configuration
+      template:
+        src: templates/tomcat-users.xml.j2
+        dest: /opt/tomcat/apache-tomcat-9.0.37/conf/tomcat-users.xml
+      when: ansible_hostname == "app-server"
+      notify: Restart tomcat
+    
+    - name: start the tomcat-server
+      systemd:
+        name: tomcat
+        state: started
+        daemon_reload: yes
+        enabled: yes
+      when: ansible_hostname == "app-server"
+
+    - name: BUILD THE WAR FILE
+      shell: git clone https://github.com/spring-petclinic/spring-framework-petclinic.git
+      ignore_errors: true
+      become: false
+      when: ansible_hostname == "app-server"
+
+    # - name: git clone the repo
+    #   git:
+    #     repo: 'https://github.com/spring-petclinic/spring-framework-petclinic.git'
+    #     dest:  /home/ubuntu/build
+    #   when: ansible_hostname == "app-server"
+
+    - name: TEMPLATE FILE FOR POM.XML
+      template:
+        src: templates/pom.xml.j2
+        dest: /home/ubuntu/spring-framework-petclinic/pom.xml
+      when: ansible_hostname == "app-server"
+      become: false
+
+    - name: BUILD THE WAR FILE
+      shell: ./mvnw jetty:run-war -P MySQL
+      args:
+        chdir: /home/ubuntu/spring-framework-petclinic/
+      ignore_errors: true
+      become: false
+      when: ansible_hostname == "app-server"
+
+    - name: COPY THE FILE DIRECTORY TO TARGET
+      copy: 
+        src: /home/ubuntu/spring-framework-petclinic/target/petclinic.war
+        dest: /opt/tomcat/apache-tomcat-9.0.37/webapps/
+        remote_src: yes
+      when: ansible_hostname == "app-server"
+      notify: Restart tomcat
+
+  handlers:
+    - name: Restart mysql
+      service:
+        name: mysql
+        state: restarted
+      when: ansible_hostname == "db-server"
+
+    - name: Restart tomcat
+      service:
+        name: tomcat
+        state: restarted
+        daemon_reload: yes
+      when: ansible_hostname == "app-server"
+
+
