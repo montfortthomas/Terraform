@@ -1,3 +1,4 @@
+create the resources
 
 ```sh
 
@@ -9,6 +10,11 @@ $ terraform init \
     -backend=true
 $ terraform plan -var-file=config.tfvars
 $ terraform apply -var-file=config.tfvars
+```
+
+Destroy the resource
+
+```sh
 $ terraform destroy -var-file=config.tfvars
 
 ```
