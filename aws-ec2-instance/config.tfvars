@@ -10,10 +10,10 @@ availability_zone   ="ap-southeast-2a"
 additional_tags     =   {
                         ProvisionBy = "Terraform"
                         Environment = "development"
-                    }
+                        }
 region              ="ap-southeast-2"
 ports               =  {
                         "443"  = ["0.0.0.0/0"]
                         "22"   = ["0.0.0.0/0"]
                         "80"   = ["0.0.0.0/0"]
-                    }
+                       }
