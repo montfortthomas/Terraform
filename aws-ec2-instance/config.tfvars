@@ -1,3 +1,5 @@
+access_key          ="xxxxx"
+secret_key          ="xxxxxx" 
 instanceName        ="demo"
 key_name            ="smart-remittance-eks-cluster"
 subnet_id           ="subnet-0f374a1f1c35b0123"
