@@ -1,10 +1,11 @@
 ```hcl
 
+**https://github.com/hashicorp/terraform/issues/19898**
 
 indents = {
-  LATIS_TE_AfterApproval = {
+  de = {
     create_version = false
-    name           = "LATIS_TE_AfterApproval"
+    name           = "de"
     description    = "Intent to order a bouquet of flowers for pick up"
 
     # fulfillment_activity
@@ -42,7 +43,7 @@ indents = {
 
     # fulfillment_activity
     type         = "CodeHook"
-    uri = "arn:aws:lambda:eu-west-1:353874849469:function:vwt-corp-latis-chatbot-iat"
+    uri = "arn:aws:lambda:eu-west-1:xxxxxx:function:vwt-corp-latis-chatbot-iat"
     message_version = "1.0"
     
     # confirmation_prompt
