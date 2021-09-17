@@ -1,0 +1,255 @@
+{
+  "Items": [
+    {
+      "Country": {
+        "S": "Hong Kong"
+      },
+      "RollOut": {
+        "S": "r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "Argentina"
+      },
+      "RollOut": {
+        "S": "r19_arg"
+      }
+    },
+    {
+      "Country": {
+        "S": "Netherlands"
+      },
+      "RollOut": {
+        "S": "r14_bnl"
+      }
+    },
+    {
+      "Country": {
+        "S": "Canada"
+      },
+      "RollOut": {
+        "S": "r08_na"
+      }
+    },
+    {
+      "Country": {
+        "S": "Spain"
+      },
+      "RollOut": {
+        "S": "r12_sp"
+      }
+    },
+    {
+      "Country": {
+        "S": "Saudi Arabia"
+      },
+      "RollOut": {
+        "S": "r16.1_me"
+      }
+    },
+    {
+      "Country": {
+        "S": "Thailand"
+      },
+      "RollOut": {
+        "S": "r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "Norway"
+      },
+      "RollOut": {
+        "S": "r07_nor"
+      }
+    },
+    {
+      "Country": {
+        "S": "Philippines"
+      },
+      "RollOut": {
+        "S": "r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "China"
+      },
+      "RollOut": {
+        "S": "r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "United States"
+      },
+      "RollOut": {
+        "S": "r08_na"
+      }
+    },
+    {
+      "Country": {
+        "S": "Poland"
+      },
+      "RollOut": {
+        "S": "r07_nor"
+      }
+    },
+    {
+      "Country": {
+        "S": "Germany"
+      },
+      "RollOut": {
+        "S": "r05_da"
+      }
+    },
+    {
+      "Country": {
+        "S": "Egypt"
+      },
+      "RollOut": {
+        "S": "r16.2_eg"
+      }
+    },
+    {
+      "Country": {
+        "S": "Brazil"
+      },
+      "RollOut": {
+        "S": "r19_br"
+      }
+    },
+    {
+      "Country": {
+        "S": "Denmark"
+      },
+      "RollOut": {
+        "S": "r07_nor"
+      }
+    },
+    {
+      "Country": {
+        "S": "France"
+      },
+      "RollOut": {
+        "S": "r03_otv,r03_vws,r09_otv,r11_sti,r21_vns"
+      }
+    },
+    {
+      "Country": {
+        "S": "Turkey"
+      },
+      "RollOut": {
+        "S": "r16.2_tu"
+      }
+    },
+    {
+      "Country": {
+        "S": "Malaysia"
+      },
+      "RollOut": {
+        "S": "\n  r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "Taiwan"
+      },
+      "RollOut": {
+        "S": "r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "Vietnam"
+      },
+      "RollOut": {
+        "S": "r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "Mexico"
+      },
+      "RollOut": {
+        "S": "r19_mex"
+      }
+    },
+    {
+      "Country": {
+        "S": "Italy"
+      },
+      "RollOut": {
+        "S": "r15_ita"
+      }
+    },
+    {
+      "Country": {
+        "S": "Switzerland"
+      },
+      "RollOut": {
+        "S": "r07_nor"
+      }
+    },
+    {
+      "Country": {
+        "S": "Singapore"
+      },
+      "RollOut": {
+        "S": "r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "South Africa"
+      },
+      "RollOut": {
+        "S": "r09.1_sa"
+      }
+    },
+    {
+      "Country": {
+        "S": "Ireland"
+      },
+      "RollOut": {
+        "S": "r10_uki"
+      }
+    },
+    {
+      "Country": {
+        "S": "Indonesia"
+      },
+      "RollOut": {
+        "S": "r17_ap"
+      }
+    },
+    {
+      "Country": {
+        "S": "India"
+      },
+      "RollOut": {
+        "S": "r16.2_in"
+      }
+    },
+    {
+      "Country": {
+        "S": "United Arab Emirates"
+      },
+      "RollOut": {
+        "S": "r16.1_me"
+      }
+    },
+    {
+      "Country": {
+        "S": "United Kingdom"
+      },
+      "RollOut": {
+        "S": "r10_uki"
+      }
+    }
+  ],
+  "Count": 31,
+  "ScannedCount": 31,
+  "ConsumedCapacity": null
+}

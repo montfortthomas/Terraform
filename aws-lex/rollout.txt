@@ -1,0 +1,32 @@
+resource "aws_dynamodb_table" "rollout" {
+  name           = "vwt_corp_latis_chatbot_rollout_${var.environment}" 
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 5
+  write_capacity = 5
+  hash_key       = "Country"
+
+  attribute {
+    name = "Country"
+    type = "S"
+  }
+  point_in_time_recovery {
+    enabled = false
+  }
+
+  tags = merge({ Name = "vwt_corp_latis_chatbot_rollout_${var.environment}-dynamodb" }, tomap(var.additional_tags))
+}
+
+resource "aws_dynamodb_table_item" "rollout" {
+  depends_on = [aws_dynamodb_table.rollout]
+  table_name = aws_dynamodb_table.rollout.name
+  hash_key   = aws_dynamodb_table.rollout.hash_key
+  count      = length(local.rollout.Items)
+  item = <<ITEM
+        ${jsonencode(local.rollout.Items[count.index])}
+    ITEM 
+}
+
+
+locals {
+    rollout = jsondecode(file("rollout.json"))
+}
